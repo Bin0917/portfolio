@@ -2,7 +2,7 @@
 
 Next.js(App Router), TypeScript, Tailwind CSS로 만든 한 페이지 포트폴리오입니다.
 
-배포 링크: (Vercel 배포 후 주소를 여기에 적습니다)
+배포 링크: https://portfolio-for-seungbindev.vercel.app
 
 ## 실행
 
