@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="20 28 590 302">
+  <style>
+    text{font-family:'Pretendard Variable',Pretendard,-apple-system,'Segoe UI','Malgun Gothic','Apple SD Gothic Neo',sans-serif}
+    .t{font-size:20px;font-weight:700;fill:#0a0a0a}
+    .s{font-size:13px;fill:#6b7280}
+    .l{font-size:14px;fill:#6b7280}
+    .b{font-size:30px;font-weight:700;fill:#9ca3af}
+    .a{font-size:30px;font-weight:700;fill:#3182f6}
+  </style>
+  <text x="48" y="72" class="t">모델까지 닿은 공격 비율</text>
+  <text x="48" y="98" class="s">설계한 공격 579건 짝비교, McNemar p&lt;0.001</text>
+
+  <text x="48" y="158" class="l">개선 전</text>
+  <rect x="48" y="170" width="412" height="28" rx="6" fill="#d1d5db"/>
+  <text x="476" y="195" class="b">82.4%</text>
+
+  <text x="48" y="252" class="l">개선 후</text>
+  <rect x="48" y="264" width="119" height="28" rx="6" fill="#3182f6"/>
+  <text x="183" y="289" class="a">23.8%</text>
+</svg>
