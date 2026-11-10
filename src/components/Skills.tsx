@@ -17,6 +17,9 @@ export function Skills({ groups }: SkillsProps) {
           <p className="text-sm text-muted-foreground">
             <RichText text={group.items} />
           </p>
+          {group.note ? (
+            <p className="text-xs font-medium text-primary">{group.note}</p>
+          ) : null}
         </div>
       ))}
     </div>

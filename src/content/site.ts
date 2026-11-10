@@ -14,6 +14,8 @@ export interface Stat {
 export interface SkillGroup {
   category: string;
   items: string;
+  /** 누구와 어떻게 했는지 밝혀야 할 때 */
+  note?: string;
 }
 
 export type TimelineIcon = "merge" | "package" | "graduation" | "school";
@@ -54,17 +56,15 @@ export const navItems: NavItem[] = [
   { label: "소개", href: "/#about", hideOnMobile: true },
   { label: "기술", href: "/#skills", hideOnMobile: true },
   { label: "프로젝트", href: "/#projects" },
-  { label: "경력", href: "/#career" },
+  { label: "약력", href: "/#career" },
   { label: "연락", href: "/#contact" },
 ];
-
-export const aboutHeading = "확인하기 전까지는 가설로 둡니다";
 
 /** **굵게** 표기는 RichText가 해석한다 */
 export const aboutParagraphs: string[] = [
   "이 습관은 고객을 만나면서 생겼습니다. 시니어 교인을 위한 헌금 서비스를 만들 때 팀원 중 교회를 다니는 사람이 없었고, 저희는 앱으로 헌금하면 편할 거라고 확신했습니다. 교회를 두 번 찾아가 어르신들을 인터뷰하니 답이 달랐습니다. 현금을 손수 내는 데에는 봉사하는 마음이 담겨 있다는 이야기였습니다. 방향을 바꿨고, 그 프로젝트로 우수상을 받았습니다.",
-  "그 뒤로는 숫자와 도구를 볼 때도 같은 순서로 봅니다. 결과가 예상과 다르면 넘기지 않고 재현해 보고, 원인이 제 코드 밖에 있으면 그 저장소까지 따라갑니다. 고친 뒤에는 다시 깨지지 않도록 테스트로 남기고, 같은 문제를 겪는 사람이 있으면 쓸 수 있게 공개합니다.",
-  '아래 네 프로젝트는 모두 **"어, 이상한데"**에서 시작했습니다.',
+  "그 뒤로는 결과가 예상과 다르면 먼저 재현해 봅니다. 원인이 제 코드 밖에 있으면 그 저장소 코드까지 읽어 보고, 고친 내용은 테스트와 함께 공개합니다.",
+  "아래 프로젝트 네 개는 **결과가 이상하다고 느낀 지점**에서 시작한 작업입니다.",
 ];
 
 export const stats: Stat[] = [
@@ -81,11 +81,9 @@ export const stats: Stat[] = [
   },
 ];
 
-export const skillsHeading = "써 본 만큼만 적었습니다";
-
 export const skillGroups: SkillGroup[] = [
   { category: "언어", items: "TypeScript, Python, Java, SQL" },
-  { category: "프론트엔드", items: "Next.js, React, Prisma, Tauri 2, Biome" },
+  { category: "프론트엔드", items: "Next.js, React, Prisma, Biome" },
   { category: "백엔드", items: "Spring 기반 MSA, Kafka, Feign" },
   {
     category: "LLM 평가와 보안",
@@ -94,18 +92,15 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     category: "자동화",
-    items: "GitHub Actions, pytest, 회귀 테스트, 모델 파일 SHA-256 검증",
+    items:
+      "GitHub Actions로 푸시마다 보안 테스트 실행, pytest 회귀 테스트, 모델 파일 SHA-256 검증",
+    note: "Claude Code와 함께 구성했습니다",
   },
   {
     category: "AI 개발 환경",
-    items:
-      "Claude Code, Gemini CLI, AI PR 리뷰. 개인 프로젝트 한 줄 로그에서는 LLM 에이전트가 단계별 진행 상태를 읽고 쓰는 `phases/` 폴더를 두고 작업합니다",
+    items: "Claude Code, Gemini CLI, AI PR 리뷰",
   },
 ];
-
-export const projectsHeading = "무엇이 이상했고, 왜 그렇게 판단했는지";
-
-export const careerHeading = "지나온 곳";
 
 export const timeline: TimelineItem[] = [
   {
@@ -134,5 +129,3 @@ export const timeline: TimelineItem[] = [
     icon: "school",
   },
 ];
-
-export const contactHeading = "코드는 GitHub에 있습니다";
