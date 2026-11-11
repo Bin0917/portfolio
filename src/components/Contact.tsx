@@ -61,7 +61,7 @@ export function Contact({ emails, github }: ContactProps) {
         </a>
       </div>
 
-      <ul className="mt-12 grid gap-4 md:grid-cols-3">
+      <ul className="mx-auto mt-12 grid max-w-2xl gap-4 sm:grid-cols-2">
         {channels.map((channel) => (
           <li key={channel.href}>
             <a

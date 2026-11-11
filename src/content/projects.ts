@@ -232,7 +232,7 @@ export const projects: Project[] = [
       fit: "cover",
     },
     summary: {
-      odd: "측정을 돌리는데 같은 공격 문장이 계속 반복해서 나갔습니다.",
+      odd: "프로브 하나가 보낸 공격 64개 중 7개가 같은 문장이었습니다.",
       judgment:
         "문장이 여러 번 세어지면 도달률과 검정 결과가 틀어지므로, 제 코드가 아니라 도구 쪽을 따라갔습니다.",
       result: "버그 두 건 수정, PR 2건 병합 (#2305, #2326)",
@@ -252,7 +252,7 @@ export const projects: Project[] = [
         highlight: true,
         content: [
           p(
-            "01의 측정을 돌리면서 같은 공격 문장이 계속 반복해서 나가는 게 보였습니다. 문장 하나가 여러 번 세어지면 도달률도, 검정 결과도 같이 틀어집니다. 그래서 제 코드가 아니라 도구 쪽을 의심하고 코드를 따라갔습니다.",
+            "01의 측정 결과를 문장 단위로 비교하다가, PromptInject 프로브 하나가 보낸 64개 중 7개가 같은 문장인 걸 봤습니다. 문장 하나가 여러 번 세어지면 도달률도, 검정 결과도 같이 틀어집니다. 그래서 제 코드가 아니라 도구 쪽을 의심하고 코드를 따라갔습니다.",
           ),
         ],
       },
@@ -261,7 +261,7 @@ export const projects: Project[] = [
         title: "원인",
         content: [
           p(
-            "PromptInject 프로브가 설정 id 네 개마다 같은 문장을 만들고 있어서, 고유한 공격 175개가 700개로 불어나 있었습니다. 원래 연구 코드는 무작위성을 얻으려고 같은 공격을 여러 번 보냈고, garak에는 그 역할을 하는 `generations` 옵션이 이미 있어서 중복이 됐다는 배경은 메인테이너가 알려 줬습니다. 수정은 #2305로 병합됐습니다.",
+            "PromptInject 프로브가 설정 id 네 개마다 같은 문장을 만들고 있어서, 고유한 공격 175개가 700개로 불어나 있었습니다. id만 다르고 보내는 내용은 같은 요청이었습니다. 이슈 #2304로 재현 코드를 올리고, 수정은 #2305로 병합됐습니다.",
           ),
         ],
       },
@@ -315,7 +315,7 @@ export const projects: Project[] = [
       odd: '전화번호 앞에 "연락처"가 있어도 문맥 점수가 오르지 않았습니다.',
       judgment:
         "lemma를 다시 만들면 모델 버전마다 결과가 달라질 수 있어서, 토큰 원문으로 문맥어를 비교하게 했습니다.",
-      result: "MIT 라이선스로 공개, 업스트림 PR에 체리픽 반영",
+      result: "MIT 라이선스로 공개, 업스트림 PR #2341 리뷰 중 (문맥 점수 반영 36문장 중 16개 → 35개)",
     },
     meta: [
       { label: "무엇", value: "Microsoft Presidio 한국어 확장" },
@@ -330,6 +330,14 @@ export const projects: Project[] = [
       {
         label: "github.com/Bin0917/presidio-ko",
         href: "https://github.com/Bin0917/presidio-ko",
+      },
+      {
+        label: "Presidio PR #2341",
+        href: "https://github.com/data-privacy-stack/presidio/pull/2341",
+      },
+      {
+        label: "Presidio PR #2215",
+        href: "https://github.com/data-privacy-stack/presidio/pull/2215",
       },
     ],
     body: [
@@ -367,7 +375,10 @@ export const projects: Project[] = [
         highlight: true,
         content: [
           p(
-            "한국어로 Presidio를 쓰는 사람이라면 누구나 부딪힐 문제라서, 누구나 설치해 쓸 수 있게 MIT 라이선스로 공개했습니다. 그 뒤 업스트림 저장소를 찾아보니 같은 문제가 이미 이슈로 올라와 있었습니다. 제보자와 이야기를 나눴고, 제보자가 제 수정을 자신의 PR에 체리픽해 반영했습니다.",
+            "한국어로 Presidio를 쓰는 사람이라면 누구나 부딪힐 문제라서, 누구나 설치해 쓸 수 있게 MIT 라이선스로 공개했습니다. 그 뒤 업스트림 저장소를 찾아보니 같은 문제가 이미 이슈(#2216)로 올라와 있었습니다. 토큰 원문으로 비교하는 옵션을 PR #2341로 올렸고 지금 리뷰 중입니다. 이슈 제보자가 한국어 문장 36개로 돌려 보니 문맥 점수가 오른 문장이 16개에서 35개로 늘었습니다.",
+          ),
+          p(
+            "계좌번호 인식기는 제보자가 올린 PR #2215를 여러 번호로 시험해 보다가 빠진 경우를 찾았습니다. 카드 번호 일부를 계좌로 잡는 문제, 국민은행과 우체국 형식 누락, 지역 전화번호와 사업자등록번호 오탐을 고친 커밋 네 개를 제보자가 체리픽해 그 PR에 반영했습니다(리뷰 중).",
           ),
         ],
       },
@@ -408,11 +419,11 @@ export const projects: Project[] = [
       { label: "결과", value: "우수상, 6명 중 커밋 1위(162건 중 62건)" },
       {
         label: "역할",
-        value: "헌금 도메인 출금과 포인트, 메인과 프로필 화면, 공통 컴포넌트",
+        value: "헌금 도메인, 메인과 프로필 화면, 공통 컴포넌트",
       },
       {
         label: "기술",
-        value: "Next.js, TypeScript, Java, Spring, Kafka, Feign",
+        value: "Next.js, TypeScript, Java, Spring Boot",
       },
     ],
     links: [],
@@ -435,24 +446,6 @@ export const projects: Project[] = [
             "헌금을 대신하는 앱이 아니라, 신앙 활동으로 쌓은 포인트를 헌금에 보태 정성을 더하는 서비스로 방향을 바꿨습니다. 이 방향으로 최종 프로젝트 우수상을 받았습니다.",
           ),
         ],
-      },
-      {
-        type: "step",
-        title: "어, 이상한데 2",
-        highlight: true,
-        content: [
-          p(
-            "처음에는 헌금 등록 전체를 `@Transactional` 하나로 묶었습니다. 그런데 출금은 다른 서비스의 DB에서 이미 확정되기 때문에, 포인트 차감이 실패해 제 쪽을 롤백해도 돈은 빠진 채로 남을 수 있었습니다. 단계마다 앞 단계를 취소하는 보상 트랜잭션(Saga)으로 바꾸고, 결과를 바로 알아야 하는 출금과 차감은 Feign으로, 늦어도 되는 총액 반영은 Kafka로 나눴습니다. 타임아웃 시 재조회, 아웃박스, 멱등 처리는 지금이라면 더할 부분으로 정리해 뒀습니다.",
-          ),
-        ],
-      },
-      {
-        type: "image",
-        src: "/projects/pray-for-hana-architecture.png",
-        alt: "Pray for Hana 아키텍처. Nginx와 API Gateway 뒤에 마이크로서비스 다섯 개, Kafka, RDS, S3가 있는 구성",
-        width: 2470,
-        height: 505,
-        caption: "프로젝트 아키텍처 (팀 README)",
       },
       {
         type: "step",

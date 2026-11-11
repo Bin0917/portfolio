@@ -35,7 +35,7 @@ export const site = {
   lede: "외국인 근로자 급여 검증 서비스에 LLM 보안 서버를 붙이고 직접 공격하며 측정했습니다. 그 과정에서 레드티밍 도구 garak의 버그 두 건을 고쳐 병합했고, 한국어 문맥을 놓치던 Presidio를 고쳐 presidio-ko로 공개했습니다.",
   github: { label: "github.com/Bin0917", href: "https://github.com/Bin0917" },
   /** GitHub 프로필 README에 공개해 둔 주소 */
-  emails: ["leesd132@naver.com", "leesd365@gmail.com"],
+  emails: ["leesd132@naver.com"],
 } as const;
 
 export interface FooterLink {
@@ -62,7 +62,7 @@ export const navItems: NavItem[] = [
 
 /** **굵게** 표기는 RichText가 해석한다 */
 export const aboutParagraphs: string[] = [
-  "이 습관은 고객을 만나면서 생겼습니다. 시니어 교인을 위한 헌금 서비스를 만들 때 팀원 중 교회를 다니는 사람이 없었고, 저희는 앱으로 헌금하면 편할 거라고 확신했습니다. 교회를 두 번 찾아가 어르신들을 인터뷰하니 답이 달랐습니다. 현금을 손수 내는 데에는 봉사하는 마음이 담겨 있다는 이야기였습니다. 방향을 바꿨고, 그 프로젝트로 우수상을 받았습니다.",
+  "확인하기 전까지는 가설로 두는 습관은 고객을 만나면서 생겼습니다. 시니어 교인을 위한 헌금 서비스를 만들 때 팀원 중 교회를 다니는 사람이 없었고, 저희는 앱으로 헌금하면 편할 거라고 확신했습니다. 교회를 두 번 찾아가 어르신들을 인터뷰하니 답이 달랐습니다. 현금을 손수 내는 데에는 봉사하는 마음이 담겨 있다는 이야기였습니다. 방향을 바꿨고, 그 프로젝트로 우수상을 받았습니다.",
   "그 뒤로는 결과가 예상과 다르면 먼저 재현해 봅니다. 원인이 제 코드 밖에 있으면 그 저장소 코드까지 읽어 보고, 고친 내용은 테스트와 함께 공개합니다.",
   "아래 프로젝트 네 개는 **결과가 이상하다고 느낀 지점**에서 시작한 작업입니다.",
 ];
@@ -84,7 +84,7 @@ export const stats: Stat[] = [
 export const skillGroups: SkillGroup[] = [
   { category: "언어", items: "TypeScript, Python, Java, SQL" },
   { category: "프론트엔드", items: "Next.js, React, Prisma, Biome" },
-  { category: "백엔드", items: "Spring 기반 MSA, Kafka, Feign" },
+  { category: "백엔드", items: "Spring Boot" },
   {
     category: "LLM 평가와 보안",
     items:
@@ -117,7 +117,7 @@ export const timeline: TimelineItem[] = [
     icon: "package",
   },
   {
-    when: "수료",
+    when: "2026.04.27 수료",
     title: "하나금융 디지털하나로 8기",
     description: "금융 IT 교육과정. 최종 프로젝트 Pray for Hana 우수상",
     icon: "graduation",
